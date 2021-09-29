@@ -1,0 +1,27 @@
+import random
+import math
+
+
+correct_guess = 0
+count = 0
+while count < 200:
+    num_1 = random.randint(1,10)
+    num_2 = random.randint(1,10)
+    guess = str(input("What is " + str(num_1) + "x" + str(num_2) + "?"))
+
+    answer =str(num_1*num_2)
+    correct = guess == answer
+
+    if guess == answer:
+        print("Correct!")
+        correct_guess = correct_guess + 1
+        print(f"Current points: {correct_guess}")
+
+    else:
+        print("Sorry, the answer is", answer, ".")
+        correct_guess = correct_guess - 2
+        print(f"Current points: {correct_guess}")
+    if correct_guess == 30:
+        break
+
+    count = count +1
